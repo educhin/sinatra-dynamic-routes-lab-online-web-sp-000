@@ -21,9 +21,17 @@ class App < Sinatra::Base
   get '/:operation/:number1/:number2' do
     @op = params[:operation]
 
-    switch @op
-    case add
+    case @op
+    when add
       (params[:number1].to_i + params[:number2].to_i).to_s
+    when subtract
+      (params[:number1].to_i - params[:number2].to_i).to_s
+    when divide
+      (params[:number1].to_i / params[:number2].to_i).to_s
+    when multiply
+      (params[:number1].to_i * params[:number2].to_i).to_s
+    else
+      "I beg your pardon?"
     end
   end
 end
