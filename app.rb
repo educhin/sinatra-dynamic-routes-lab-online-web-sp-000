@@ -22,13 +22,13 @@ class App < Sinatra::Base
     @op = params[:operation]
 
     case @op
-    when add
+    when "add"
       (params[:number1].to_i + params[:number2].to_i).to_s
-    when subtract
+    when "subtract"
       (params[:number1].to_i - params[:number2].to_i).to_s
-    when divide
+    when "divide"
       (params[:number1].to_i / params[:number2].to_i).to_s
-    when multiply
+    when "multiply"
       (params[:number1].to_i * params[:number2].to_i).to_s
     else
       "I beg your pardon?"
